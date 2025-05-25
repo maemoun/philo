@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:52:37 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/05/05 15:44:49 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/05/25 19:06:08 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,27 @@ void	ft_creat_philos(t_table *lst)
 	{
 		lst->philos[i].index = i + 1;
 		lst->philos[i].meal_count = 0;
+		lst->philos[i].last_meal = get_time_ms();
 		lst->philos[i].left_fork = &lst->forks[i];
 		lst->philos[i].right_fork = &lst->forks[(i + 1) % lst->nb_philos];
 		lst->philos[i].table = lst;
+		i++;
+	}
+	lst->is_dead = 0;
+	if (lst->nb_of_meals == 0)
+		return ;
+	pthread_create(&lst->check_die, NULL, ft_check_die, lst);
+	i = 0;
+	while (i < lst->nb_philos)
+	{
+		pthread_create(&lst->philos[i].thread, NULL, philo_routine, &lst->philos[i]);
+		i++;
+	}
+	pthread_join(lst->check_die, NULL);
+	i = 0;
+	while (i < lst->nb_philos)
+	{
+		pthread_join(lst->philos[i].thread, NULL);
 		i++;
 	}
 }
