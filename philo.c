@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:52:37 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/05/28 19:37:07 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/05/28 20:04:23 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	ft_pthread_create(t_table *lst)
 	i = 0;
 	while (i < lst->nb_philos)
 	{
-		pthread_create(&lst->philos[i].thread, NULL, philo_routine, &lst->philos[i]);
+		pthread_create(&lst->philos[i].thread, 
+			NULL, philo_routine, &lst->philos[i]);
 		i++;
 	}
 }
