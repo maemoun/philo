@@ -6,15 +6,15 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:52:47 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/04/23 11:53:35 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/05/28 18:09:52 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void    ft_print_error(char *s)
+void	ft_print_error(char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])

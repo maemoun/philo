@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 12:24:42 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/05/25 18:52:03 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/05/28 19:41:48 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,9 @@ int	is_dead(t_philo *philo)
 
 void	*philo_routine(void *arg)
 {
-	t_philo	*philo = (t_philo *)arg;
+	t_philo	*philo;
 
+	philo = (t_philo *)arg;
 	if (philo->index % 2 == 0)
 		ft_usleep(philo->table->time_to_eat / 2, philo->table);
 	while (is_dead(philo) == 0)

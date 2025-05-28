@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:52:06 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/05/25 17:45:10 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/05/28 19:40:58 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_check_nbrs(int ac, char **av, t_table *lst)
 {
-	int i;
-	
+	int	i;
+
 	i = 1;
-	while(i < ac)
+	while (i < ac)
 	{
 		if (ft_atoi(av[1]) != -1)
 			lst->nb_philos = (ft_atoi(av[1]));

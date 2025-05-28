@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 16:03:01 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/05/25 17:46:17 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/05/28 19:37:51 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_last_time(t_table *lst)
 {
-	int i;
+	int			i;
 	long long	time;
 
 	i = 0;
@@ -36,8 +36,8 @@ int	ft_last_time(t_table *lst)
 
 int	ft_max_eat(t_table *lst)
 {
-	int  i;
-	int full;
+	int	i;
+	int	full;
 
 	i = 0;
 	full = 0;
@@ -50,7 +50,7 @@ int	ft_max_eat(t_table *lst)
 		i++;
 	}
 	if (full == lst->nb_philos)
-	{			
+	{
 		pthread_mutex_lock(&lst->death_mutex);
 		lst->is_dead = 1;
 		pthread_mutex_unlock(&lst->death_mutex);
@@ -61,8 +61,9 @@ int	ft_max_eat(t_table *lst)
 
 void	*ft_check_die(void	*arg)
 {
-	t_table *lst = ((t_table *)arg);
+	t_table	*lst;
 
+	lst = (t_table *)arg;
 	while (!lst->is_dead)
 	{
 		if (ft_last_time(lst) || ft_max_eat(lst))

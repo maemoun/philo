@@ -6,16 +6,16 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:52:57 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/04/23 14:57:28 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/05/28 18:06:00 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int ft_atoi(char *s)
+int	ft_atoi(char *s)
 {
-	int i;
-	int total;
+	int	i;
+	int	total;
 
 	i = 0;
 	total = 0;

@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 15:14:44 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/05/25 17:24:27 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/05/28 19:41:23 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 void	ft_forks_to_philos(t_table *lst)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	lst->start_time = get_time_ms();
 	pthread_mutex_init(&lst->death_mutex, NULL);
 	pthread_mutex_init(&lst->print_mutex, NULL);
 	pthread_mutex_init(&lst->eat_mutex, NULL);
-
 	lst->forks = malloc(sizeof(pthread_mutex_t) * lst->nb_philos);
 	if (!lst->forks)
 	{
