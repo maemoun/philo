@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:52:37 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/05/28 20:04:23 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/05/28 20:35:28 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,11 @@ void	ft_creat_philos(t_table *lst)
 	ft_pthread_join(lst);
 }
 
+void	l(void)
+{
+	system("leaks -q philo");
+}
+
 int	main(int ac, char **av)
 {
 	t_table	lst;
@@ -86,4 +91,5 @@ int	main(int ac, char **av)
 		ft_print_error("Error\n");
 		return (1);
 	}
+	atexit(l);
 }
